@@ -1,0 +1,9 @@
+node_modules/
+
+# Build artifact
+dist/
+build/
+storybook-static/
+
+# Coverage
+coverage/

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@hdnax/nuclint",
+  "version": "0.0.0",
+  "description": "Shared ESLint configuration.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hdnax/rna.git",
+    "directory": "packages/nuclint"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "files": [
+    "index.ts"
+  ],
+  "keywords": [
+    "eslint"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "peerDependencies": {
+    "eslint": "^9.39.2"
+  },
+  "dependencies": {
+    "@stylistic/eslint-plugin": "^5.7.0",
+    "eslint-plugin-import": "^2.32.0",
+    "typescript-eslint": "^8.52.0"
+  }
+}

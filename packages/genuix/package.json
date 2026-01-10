@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@hdnax/genuix",
+  "version": "0.0.0",
+  "description": "A personal design system — Gene + UI/UX = Genuix.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hdnax/rna.git",
+    "directory": "packages/genuix"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/genuix.js",
+      "require": "./dist/genuix.umd.cjs"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "main": "./dist/genuix.umd.cjs",
+  "module": "./dist/genuix.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "design system",
+    "vue",
+    "storybook"
+  ],
+  "scripts": {
+    "dev": "storybook dev -p 8686",
+    "build": "vite build",
+    "build-storybook": "storybook build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.26"
+  },
+  "devDependencies": {
+    "@storybook/vue3-vite": "^10.1.11",
+    "@tailwindcss/vite": "^4.1.18",
+    "@vitejs/plugin-vue": "^6.0.3",
+    "@hdnax/nuclint": "workspace:*",
+    "storybook": "^10.1.11",
+    "vite-plugin-dts": "^4.5.4"
+  }
+}
