@@ -3,7 +3,7 @@ import stylistic from '@stylistic/eslint-plugin';
 import importPlugin from 'eslint-plugin-import';
 import tseslint from 'typescript-eslint';
 
-export const config = [
+export const config: Linter.Config[] = [
   stylistic.configs.recommended,
   ...tseslint.configs.recommended,
   {
@@ -38,6 +38,6 @@ export const config = [
   {
     ignores: ['node_modules', 'dist', 'storybook-static'],
   },
-] satisfies Linter.Config[];
+];
 
 export default config;

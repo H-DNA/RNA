@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/package",
   "name": "@hdnax/nuclint",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Shared ESLint configuration.",
   "repository": {
     "type": "git",
@@ -12,16 +12,23 @@
     "registry": "https://npm.pkg.github.com"
   },
   "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./index.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
   },
   "files": [
-    "index.ts"
+    "dist"
   ],
   "keywords": [
     "eslint"
   ],
   "scripts": {
+    "build": "tsc -p tsconfig.build.json",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
