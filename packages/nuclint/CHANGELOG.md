@@ -1,5 +1,18 @@
 # nuclint
 
+## 0.5.0
+
+### Minor Changes
+
+- Add comprehensive ESLint rules for better code quality and consistency:
+
+  - Add TypeScript rules: consistent-type-imports, consistent-type-definitions, no-explicit-any, no-non-null-assertion
+  - Add stylistic rules: array-bracket-spacing, brace-style, comma-dangle, comma-spacing, eol-last, key-spacing, multiline-ternary, no-multiple-empty-lines, no-trailing-spaces, object-curly-spacing
+  - Add import rules: named, no-cycle, no-deprecated, no-self-import, no-unused-modules
+  - Improve no-unused-vars to handle function parameters and caught errors with underscore prefix
+  - Add arrow-parens rule to enforce parentheses in arrow functions
+  - Add multiline-ternary rule to allow formatting long ternary chains across multiple lines
+
 ## 0.4.1
 
 ### Patch Changes

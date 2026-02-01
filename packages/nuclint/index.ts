@@ -16,14 +16,26 @@ export const config: Linter.Config[] = [
       'import': importPlugin,
     },
     rules: {
+      // TypeScript rules
       '@typescript-eslint/no-unused-vars': ['error', {
-        varsIgnorePattern: '_.*',
+        varsIgnorePattern: '^_',
+        argsIgnorePattern: '^_',
+        caughtErrorsIgnorePattern: '^_',
       }],
+      '@typescript-eslint/consistent-type-imports': 'error',
+      '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
+      '@typescript-eslint/no-explicit-any': 'error',
+      '@typescript-eslint/no-non-null-assertion': 'error',
+
+      // Stylistic rules
+      '@stylistic/array-bracket-spacing': ['error', 'never'],
+      '@stylistic/arrow-parens': ['error', 'always'],
+      '@stylistic/brace-style': ['error', '1tbs'],
+      '@stylistic/comma-dangle': ['error', 'always-multiline'],
+      '@stylistic/comma-spacing': ['error', { before: false, after: true }],
+      '@stylistic/eol-last': ['error', 'always'],
       '@stylistic/indent': ['error', 2],
-      '@stylistic/quotes': ['error', 'single'],
-      '@stylistic/semi': ['error', 'always'],
-      '@stylistic/space-before-blocks': ['error', 'always'],
-      '@stylistic/space-before-function-paren': ['error', 'always'],
+      '@stylistic/key-spacing': ['error', { beforeColon: false, afterColon: true }],
       '@stylistic/member-delimiter-style': [
         'error',
         {
@@ -37,9 +49,24 @@ export const config: Linter.Config[] = [
           },
         },
       ],
+      '@stylistic/multiline-ternary': ['error', 'always-multiline'],
+      '@stylistic/no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0 }],
+      '@stylistic/no-trailing-spaces': 'error',
+      '@stylistic/object-curly-spacing': ['error', 'always'],
+      '@stylistic/quotes': ['error', 'single'],
+      '@stylistic/semi': ['error', 'always'],
+      '@stylistic/space-before-blocks': ['error', 'always'],
+      '@stylistic/space-before-function-paren': ['error', 'always'],
+
+      // Import rules
       'import/first': 'error',
+      'import/named': 'error',
       'import/newline-after-import': 'error',
+      'import/no-cycle': 'warn',
+      'import/no-deprecated': 'warn',
       'import/no-duplicates': 'error',
+      'import/no-self-import': 'error',
+      'import/no-unused-modules': 'warn',
       'import/max-dependencies': 'off',
       'import/order': [
         'error',
